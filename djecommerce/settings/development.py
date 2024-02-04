@@ -4,10 +4,11 @@ DEBUG = True
 ALLOWED_HOSTS = ['127.0.0.1']
 
 INSTALLED_APPS += [
-    'debug_toolbar'
+    'debug_toolbar',
+    'crispy_bootstrap4'
 ]
 
-MIDDLEWARE += ['debug_toolbar.middleware.DebugToolbarMiddleware', ]
+MIDDLEWARE += ['debug_toolbar.middleware.DebugToolbarMiddleware', 'allauth.account.middleware.AccountMiddleware' ]
 
 # DEBUG TOOLBAR SETTINGS
 
@@ -45,3 +46,6 @@ DATABASES = {
 
 STRIPE_PUBLIC_KEY = config('STRIPE_TEST_PUBLIC_KEY')
 STRIPE_SECRET_KEY = config('STRIPE_TEST_SECRET_KEY')
+
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
